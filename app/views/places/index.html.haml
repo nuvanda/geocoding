@@ -1,0 +1,6 @@
+%header
+  %h1.display-4 Places
+= link_to 'Add place', new_place_path, class: 'btn btn-primary btn-lg'
+.card
+  .card-block
+    %ul= render @places
