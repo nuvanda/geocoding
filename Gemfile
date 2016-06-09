@@ -47,3 +47,4 @@ end
 
 gem 'bootstrap-sass'
 gem 'haml-rails'
+gem 'geocoder'
