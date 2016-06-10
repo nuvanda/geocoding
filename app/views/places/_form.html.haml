@@ -1,13 +1,15 @@
-= form_for @place do |f|
-  %fieldset.form-group
-    = f.label :title
-    = f.text_field :title, class: "form-control"
-  %fieldset.form-group
-    = f.label :visited_by
-    = f.text_field :user_id, class: "form-control"
-  %fieldset.form-group
-    = f.label :address, 'Address'
-    = f.text_field :address, class: "form-control"
-    %small.text-muted
-      You can also enter IP. Your IP is #{request.ip}
-  = f.submit 'Add!', class: 'btn btn-primary'
+%h4 Enter either address or coordinates
+%fieldset.form-group
+  = f.label :raw_address, 'Address'
+  = f.text_field :raw_address, class: "form-control"
+  %small.text-muted
+    You can also enter IP. Your IP is #{request.ip}
+.form-group.row
+  .col-sm-1
+    = f.label :latitude
+  .col-sm-3
+    = f.text_field :latitude, class: "form-control"
+  .col-sm-1
+    = f.label :longitude
+  .col-sm-3
+    = f.text_field :longitude, class: "form-control"
